@@ -1,1 +1,34 @@
 
+import java.util.Scanner;
+public class binarySum {
+    public static void main(String [] args)
+    {
+        Scanner input=new Scanner(System.in);
+        System.out.print("Enter Two Binary Number : ");
+        {
+            int bin1,bin2;
+            bin1=input.nextInt();
+            bin2=input.nextInt();
+            int []A=new int [10];int i=0;
+            int carry=0;
+            while(bin1!=0 || bin2!=0)
+            {
+               A[i++] =(bin1%10 + bin2%10 + carry)%2;
+               carry=(bin1%10 + bin2%10 + carry)/2;
+               bin1/=10;bin2/=10;
+            }
+            if(carry!=0)
+            {
+                A[i++]=carry;
+            }
+            i--;
+            System.out.print("Sum of Two Binary Number is : ");
+           for(;i!=-1;i--)
+            {
+                System.out.print(A[i]);
+                
+        }
+    }
+    
+}
+
